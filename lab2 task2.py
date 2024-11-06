@@ -7,7 +7,9 @@ increase = 0.03  # Ежемесячный рост цен
 
 money_capital = 0
 for i in range(months):
-    money_capital += spend-salary
-    spend *= 1 + increase
+    money_capital += spend*(((increase+1)**i)) - salary
+
+if money_capital/int(money_capital) != 0:
+    money_capital += 1
 
 print(f"Подушка безопасности, чтобы протянуть {months} месяцев без долгов:", int(money_capital))
