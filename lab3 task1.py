@@ -1,15 +1,16 @@
-salary = 5000  # Ежемесячная зарплата
-spend = 6000  # Траты за первый месяц
-months = 10  # Количество месяцев, которое планируется протянуть без долгов
-increase = 0.03  # Ежемесячный рост цен
+# TODO Напишите функцию для поиска индекса товара
 
-# TODO Рассчитайте подушку безопасности, чтобы протянуть 10 месяцев без долгов
+def function(x, y):
+    for i in range(len(x)):
+        if(x[i] == y):
+            return i
+    return None
 
-money_capital = 0
-for i in range(months):
-    money_capital += spend*(((increase+1)**i)) - salary
+items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
 
-# if money_capital/int(money_capital) != 0:
-#     money_capital += 1
-
-print(f"Подушка безопасности, чтобы протянуть {months} месяцев без долгов:", int(money_capital))
+for find_item in ['банан', 'груша', 'персик']:
+    index_item = function(items_list, find_item)  # TODO Вызовите функцию, что получить индекс товара
+    if index_item is not None:
+        print(f"Первое вхождение товара '{find_item}' имеет индекс {index_item}.")
+    else:
+        print(f"Товар '{find_item}' не найден в списке.")
